@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 90px;
+    font-size: 22px;
+    z-index: 99;
+    opacity: 0;
+    animation: to-bottom 1s ease forwards;
+}
+header nav a{
+    color: black;
+    font-size: 26px;
+    margin-left: 70px;
+    transition: .3s;
+}
+header nav .active,
+header nav a:hover{
+    color: #5473ff;
+}
+.Home{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 90px;
+    overflow: hidden;
+}
+.text-box{
+    width: 50%;
+    z-index: 99;
+}
+.text-box h1{
+    color: #5473ff;
+    font-size: 85px;
+    animation: to-right 1s ease forwards 1.3s;
+}
+.text-box h1:nth-child(2){
+    color: black;
+    font-size: 65px;
+    animation-delay: 1.5s;
+}
+.text-box p{
+    margin: 38px 0;
+    font-size: 24px;
+    width: 82%;
+    color: #989898;
+    animation: to-right 1s ease forwards 1.7s;
+}
+.btn-box{
+    display: flex;
+    gap: 18px;
+}
+.btn{
+    position: relative;
+    padding: 13px 35px;
+    font-size: 25px;
+    border: 2px solid #5473ff;
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s;
+    animation: to-right 1s ease forwards 1.9s;
+}
+.btn:hover,
+.btn:nth-child(2){
+    color: white;
+    background-color: #5473ff;
+    box-shadow: 0 0 15px #5473ff;
+}
+.btn:nth-child(2):hover{
+    color: black;
+    background: transparent;
+    box-shadow: none;
+}
+.Home img{
+    position: absolute;
+    pointer-events: none;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+}
+.text-box *{
+    opacity: 0;
+}
+.text-box span{
+    opacity: 1;
+}
+/* keyframes */
+@keyframes to-bottom {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes to-right {
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.microphone,
+.desk{
+    animation: fade 1s ease forwards;
+}
+.microphone{
+    animation-delay: 1.5s;
+}
+@keyframes person {
+    0%{
+        opacity: 0;
+        transform: translateX(var(--tx));
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.person{
+    animation: person 1.5s ease forwards .5s;
+}
+@keyframes scale {
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+}
+.chat{
+    animation: fade 1s ease forwards 2s, scale 3s ease infinite var(--delay);
+}
+.chat-1{
+    transform-origin: 22% 29%;
+}
+.chat-2{
+    transform-origin: 75% 28%;
+}
